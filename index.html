@@ -1,0 +1,307 @@
+DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="main.css">
+    <title>WebVR Report - ShopVista</title>
+    <meta name="description" content="Now in 3D!">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.8.6/dist/aframe-extras.min.js"></script>
+    <script src="js/video.js"></script>
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div class="splash">
+        <div class="splash__card">
+          <h1>WebVR Report - ShopVista</h1>
+          <p>You can move around with WASD keys (desktop) and drag using mousepad/ trackpad</p>
+          <img class="splash__img" src="img/startimage.jpg" alt="whoa">
+          <button class="splash__button">Enter</button>
+        </div>
+      </div>
+
+    <script>
+        const splashButton = document.querySelector('.splash__button');
+        const splashScreen = document.querySelector('.splash');
+        
+        splashButton.addEventListener('click', () => {
+            splashScreen.style.display = 'none';
+        });
+    </script>
+
+<a-scene>
+    <a-assets>
+        <!-- Load the texture for the ground -->
+        <img id="groundTexture" src="texture/grass.avif">
+        <!-- Load the texture for the walls -->
+        <img id="wallTexture" src="texture/wall.jpeg">
+    </a-assets>
+
+    <!--sky-->
+    <a-sky src="texture/sky.jpeg" theta-length="90"></a-sky>
+    <!--outer ground-->
+    <a-plane src="#groundTexture" position="0 -1.426 0" rotation="-90 0 0" scale="1500 1500 1500" repeat="160 160"></a-plane>
+    <!-- Create walls around the ground -->
+    <!--<a-plane src="#wallTexture" position="0 2.5 -15" scale = "30 5 30"></a-plane>-->
+    <!--left walls-->
+    <a-box src="#wallTexture" position="64.804 7.232 0" rotation="0 -90 0" scale = "30 15 0.5"></a-box>
+    <a-box src="#wallTexture" position="65.151 7.232 -30.011" rotation="0 -90 0" scale = "30 15 0.5"></a-box>
+    <a-box src="#wallTexture" position="65.151 7.232 -59.943" rotation="0 -90 0" scale = "30 15 0.5"></a-box>
+    <a-box src="#wallTexture" position="65.151 7.232 -90.017" rotation="0 -90 0" scale = "30 15 0.5"></a-box>
+    <a-box src="#wallTexture" position="65.151 7.232 -120.058" rotation="0 -90 0" scale = "30 15 0.5"></a-box>
+    <!--middle walls-->
+    <a-box src="#wallTexture" position="50.164 7.232 15" rotation="0 180 0" scale = "30 15 0.5"></a-box>
+    <a-box src="#wallTexture" position="20.14.164 7.232 15" rotation="0 180 0" scale = "30 15 0.5"></a-box>
+    <a-box src="#wallTexture" position="-9.79 7.232 15" rotation="0 180 0" scale = "30 15 0.5"></a-box>
+    <a-box src="#wallTexture" position="-39.789 7.232 15" rotation="0 180 0" scale = "30 15 0.5"></a-box>
+    <a-box src="#wallTexture" position="-69.685 7.232 15" rotation="0 180 0" scale = "30 15 0.5"></a-box>
+    
+    <!--right walls-->
+    <a-box src="#wallTexture" position="-84.793 7.232 0" rotation="0 90 0" scale = "30 15 0.5"></a-box>
+    <a-box src="#wallTexture" position="-84.793 7.232 -30.044" rotation="0 90 0" scale = "30 15 0.5"></a-box>
+    <a-box src="#wallTexture" position="-84.793 7.232 -60.103" rotation="0 90 0" scale = "30 15 0.5"></a-box>
+    <a-box src="#wallTexture" position="-84.793 7.232 -90.123" rotation="0 90 0" scale = "30 15 0.5"></a-box>
+    <a-box src="#wallTexture" position="-84.793 7.232 -120.146" rotation="0 90 0" scale = "30 15 0.5"></a-box>
+
+    <!--trees-->
+    <!--Front Type1-->
+
+    <a-gltf-model position="58.258 0.037 7.973" rotation="0 180 0" scale="7.470 6.370 5.540" src="3d model/tree1.glb"></a-gltf-model>
+    <a-gltf-model position="-18.501 0.037 7.973" rotation="0 180 0" scale="7.470 6.370 5.540" src="3d model/tree1.glb"></a-gltf-model>
+    <a-gltf-model position="-42.895 0.037 7.973" rotation="0 180 0" scale="7.470 6.370 5.540" src="3d model/tree1.glb"></a-gltf-model>
+    <a-gltf-model position="7.814 0.037 7.973" rotation="0 180 0" scale="7.470 6.370 5.540" src="3d model/tree1.glb"></a-gltf-model>
+    <a-gltf-model position="33.668 0.037 7.973" rotation="0 180 0" scale="7.470 6.370 5.540" src="3d model/tree1.glb"></a-gltf-model>
+    <a-gltf-model position="-66.628 0.037 7.973" rotation="0 180 0" scale="7.470 6.370 5.540" src="3d model/tree1.glb"></a-gltf-model>
+    
+    <!--Left side TYPE1-->
+    <a-gltf-model position="60.315 0.037 -11.268" rotation="0 -90 0" scale="7.470 6.370 5.540" src="3d model/tree1.glb"></a-gltf-model>
+    <a-gltf-model position="60.315 0.037 -41.382" rotation="0 -90 0" scale="7.470 6.370 5.540" src="3d model/tree1.glb"></a-gltf-model>
+    <a-gltf-model position="60.315 0.037 -71.768" rotation="0 -90 0" scale="7.470 6.370 5.540" src="3d model/tree1.glb"></a-gltf-model>
+    <a-gltf-model position="60.315 0.037 -98.774" rotation="0 -90 0" scale="7.470 6.370 5.540" src="3d model/tree1.glb"></a-gltf-model>
+    <a-gltf-model position="60.315 0.037 -127.087" rotation="0 -90 0" scale="7.470 6.370 5.540" src="3d model/tree1.glb"></a-gltf-model>
+    
+    <!--right side TYPE1-->
+    <a-gltf-model position="-79.021 0.037 -1.448" rotation="0 90 0" scale="7.470 6.370 5.540" src="3d model/tree1.glb"></a-gltf-model>
+    <a-gltf-model position="-79.021 0.037 -28.748" rotation="0 90 0" scale="7.470 6.370 5.540" src="3d model/tree1.glb"></a-gltf-model>
+    <a-gltf-model position="-79.021 0.037 -55.159" rotation="0 90 0" scale="7.470 6.370 5.540" src="3d model/tree1.glb"></a-gltf-model>
+    <a-gltf-model position="-79.021 0.037 -83.351" rotation="0 90 0" scale="7.470 6.370 5.540" src="3d model/tree1.glb"></a-gltf-model>
+    <a-gltf-model position="-79.021 0.037 -112.908" rotation="0 90 0" scale="7.470 6.370 5.540" src="3d model/tree1.glb"></a-gltf-model>
+    <!--Fountain-->
+    <a-gltf-model position="-8.663 0.037 -75.729" rotation="0 180 0" scale="2.630 1.370 2.380" src="3d model/fountain.glb"></a-gltf-model>
+    <!--Railing-->
+    <!--left side-->
+    <a-gltf-model position="54.682 -1.536 -134.572" rotation="0 180 0" scale="15.030 14.360 8.170" src="3d model/railing.glb"></a-gltf-model>
+    <a-gltf-model position="35.128 -1.536 -134.572" rotation="0 180 0" scale="15.030 14.360 8.170" src="3d model/railing.glb"></a-gltf-model>
+    <a-gltf-model position="15.479 -1.536 -134.572" rotation="0 180 0" scale="15.030 14.360 8.170" src="3d model/railing.glb"></a-gltf-model>
+    <!--right side-->
+    <a-gltf-model position="-34.606 -1.536 -134.572" rotation="0 180 0" scale="15.030 14.360 8.170" src="3d model/railing.glb"></a-gltf-model>
+    <a-gltf-model position="-54.166 -1.536 -134.572" rotation="0 180 0" scale="15.030 14.360 8.170" src="3d model/railing.glb"></a-gltf-model>
+    <a-gltf-model position="-74.089 -1.536 -134.572" rotation="0 180 0" scale="15.030 14.360 8.170" src="3d model/railing.glb"></a-gltf-model>
+    
+    <!--gateplant-->
+    <a-gltf-model position="1.306 -1.137 -134.722" rotation="0 180 0" scale="7.470 6.370 5.540" src="3d model/plantgate.glb"></a-gltf-model>
+    <a-gltf-model position="-21.379 -1.137 -134.722" rotation="0 180 0" scale="7.470 6.370 5.540" src="3d model/plantgate.glb"></a-gltf-model>
+    
+    <!--inside fountain plant-->
+    <!--type 1-->
+    <a-gltf-model position="5.128 -1.434 -77.789" rotation="0 180 0" scale="4.550 1.590 5.540" src="3d model/plant1.glb"></a-gltf-model>
+    <a-gltf-model position="-22.698 -1.434 -77.789" rotation="0 180 0" scale="4.550 1.590 5.540" src="3d model/plant1.glb"></a-gltf-model>
+    
+    <!--lamp-->
+    <!--left-->
+    <a-gltf-model position="50.934 -0.891 -4.390" rotation="0 180 0" scale="7.470 4.700 5.540" src="3d model/lamp.glb"></a-gltf-model>
+    <a-gltf-model position="50.934 -0.891 -51.775" rotation="0 180 0" scale="7.470 4.700 5.540" src="3d model/lamp.glb"></a-gltf-model>
+    <a-gltf-model position="50.934 -0.891 -108.096" rotation="0 180 0" scale="7.470 4.700 5.540" src="3d model/lamp.glb"></a-gltf-model>
+    
+    <!--front-->
+    <a-gltf-model position="16.433 -0.365 -4.423" rotation="0 90 0" scale="7.470 4.700 5.540" src="3d model/lamp.glb"></a-gltf-model>
+    <a-gltf-model position="-35.116 -0.365 -4.423" rotation="0 90 0" scale="7.470 4.700 5.540" src="3d model/lamp.glb"></a-gltf-model>
+    
+    <!--right-->
+    <a-gltf-model position="-70.516 0.019 0.600" rotation="0 360 0" scale="7.470 4.700 5.540" src="3d model/lamp.glb"></a-gltf-model>
+    <a-gltf-model position="-70.516 0.019 -46.297" rotation="0 360 0" scale="7.470 4.700 5.540" src="3d model/lamp.glb"></a-gltf-model>
+    <a-gltf-model position="-70.516 0.019 -103.109" rotation="0 360 0" scale="7.470 4.700 5.540" src="3d model/lamp.glb"></a-gltf-model>
+   
+    <!--bench-->
+    <!--front-->
+    <a-gltf-model position="33.329 -0.505 -4.423" rotation="0 180 180" scale="-0.050 -0.050 0.040" src="3d model/bench.glb"></a-gltf-model>
+    <a-gltf-model position="-55.398 -0.505 -4.423" rotation="0 180 180" scale="-0.050 -0.050 0.040" src="3d model/bench.glb"></a-gltf-model>
+    <!--right-->
+    <a-gltf-model position="-75.386 -0.891 -22.384" rotation="0 90 180" scale="-0.050 -0.050 0.040" src="3d model/bench.glb"></a-gltf-model>
+    <a-gltf-model position="-75.386 -0.891 -76.418" rotation="0 90 180" scale="-0.050 -0.050 0.040" src="3d model/bench.glb"></a-gltf-model>
+    <a-gltf-model position="-75.386 -0.891 -119.153" rotation="0 90 180" scale="-0.050 -0.050 0.040" src="3d model/bench.glb"></a-gltf-model>
+    <!--left-->
+    <a-gltf-model position="52.083 -0.891 -19.227" rotation="0 270 180" scale="-0.050 -0.050 0.040" src="3d model/bench.glb"></a-gltf-model>
+    <a-gltf-model position="52.083 -0.891 -77.245" rotation="0 270 180" scale="-0.050 -0.050 0.040" src="3d model/bench.glb"></a-gltf-model>
+    <a-gltf-model position="52.083 -0.891 -119.968" rotation="0 270 180" scale="-0.050 -0.050 0.040" src="3d model/bench.glb"></a-gltf-model>
+    
+    <!--video-->
+    <video id="theaterVideo" autoplay="false" loop="false" webkit-playsinline playsinline src="img/movie.mp4"></video>
+
+    <a-entity position="-1.5 1.5 -22.5">
+        <a-video src="#theaterVideo" width="7" height="5.25" position="-3.904 3.956 27.582" rotation="0 180 0" scale="2 2 2"></a-video>
+    </a-entity>
+
+    <a-gltf-model src="3d model/stoneslab2.glb" position="44.273 -0.336 -91.793" rotation="0 45 0" scale ="0.040 0.070 0.110"></a-gltf-model>
+
+    <a-gltf-model src="3d model/stoneslab2.glb" position="44.273 -0.336 -63.109" rotation="0 45 0" scale ="0.040 0.070 0.110"></a-gltf-model>
+
+    <a-gltf-model src="3d model/stoneslab2.glb" position="44.273 -0.336 -35.059" rotation="0 45 0" scale ="0.040 0.070 0.110"></a-gltf-model>
+    
+    <a-gltf-model src="3d model/stoneslab2.glb" position="13.488 -0.336 -10.731" rotation="0 45 0" scale ="0.040 0.070 0.110"></a-gltf-model>
+    
+    <a-gltf-model src="3d model/stoneslab2.glb" position="-63.501 -0.336 -35.059" rotation="0 -45 0" scale ="0.040 0.070 0.160"></a-gltf-model>
+    
+    <a-gltf-model src="3d model/stoneslab2.glb" position="-24.384 -0.336 -11.308" rotation="0 -45 0" scale ="0.040 0.070 0.160"></a-gltf-model>
+    
+    <a-gltf-model src="3d model/stoneslab2.glb" position="-63.501 -0.336 -61.841" rotation="0 -45 0" scale ="0.040 0.070 0.160"></a-gltf-model>
+    
+    <a-gltf-model src="3d model/stoneslab2.glb" position="-63.501 -0.336 -88.943" rotation="0 -45 0" scale ="0.040 0.070 0.160"></a-gltf-model>
+    
+    <a-gltf-model src="3d model/stoneslab2.glb" position="10.074 -0.336 -154.239" rotation="0 45 0" scale ="0.040 0.070 0.110"></a-gltf-model>
+
+    <a-gltf-model src="3d model/stoneslab2.glb" position="-33.931 -0.336 -154.579" rotation="0 -45 0" scale ="0.040 0.070 0.160"></a-gltf-model>
+    
+    <!--Intro-->
+    <a-text value="SUMMER INTERNSHIP TRAINING REPORT 
+
+    METAVERSE-VIRTUAL REALITY WITH UNITY
+
+    PROJECT ON VIRTUAL SHOPPING MALL-"    
+    color="#9AC5F4" position="-29.943 9.213 -152.146" scale="2.160 5.710 0.000" rotation="0 -225 0"></a-text>
+
+    <!--Intro name-->
+    <a-text value="“ShopVista - Your Window to 
+    Endless Virtual Shopping Delights"
+    color="antiquewhite" position="-29.943 3.502 -151.673" scale="2.910 5.710 0.000" rotation="0 -225 0"></a-text>
+    
+    <!--Team members-->
+    <a-text value="TEAM MEMBERS:
+
+    1.	AAYUSHI SINHA, 00601012022  CSE
+    2.	AYUSHI DUBEY, 01601192022  AI-ML
+    3.	AMISHI KUMAR, 02401012022 CSE
+    4.	ANWITA SINHA, 03901012022 CSE
+    5.	TANVI SAROHA, 14501182022 ECE-AI
+    "
+    color="#97FEED" position="13.517 8.110 -158.262" scale="2.530 6.930 0.000" rotation="0 225 0"></a-text>
+    
+    <!--Undertaking-->
+    <a-text value="Untertaking:
+
+    We, Aayushi Sinha, Ayushi Dubey, Amishi Kumar, Anwita Sinha, and Tanvi Saroha, 
+    participating in the Metaverse- Virtual Reality with Unity Summer Internship, 
+    confirm that this report is original, properly cited, and represents our own work. 
+    We are accountable for its authenticity and pledge 
+    to maintain academic honesty and ethical conduct throughout.
+    "
+    text.align="center" color="#FFCEFE" position="47.131 7.089 -95.819" scale="2.010 5.300 0.110" rotation="0 225 0"></a-text>
+    <!--Acknowledgement-->
+        <a-text value="Acknowledgement:
+
+        We sincerely thank IGDTUW for the internship opportunity 
+        and access to the AR-VR lab. Our mentors, Mr. Dharm Raj Panwar, 
+        Dr. Rashmi, and Mr. Sachin, shaped our projects with their guidance. 
+        Thanks to our colleagues for teamwork on SHOPVISTA. 
+        Special gratitude to Dr. Alongbar Wary, Dr. Gaurav Indra, 
+        and IT department members for constant support.       
+    "
+    text.align="center" wrap-count="30.000" color="#FFCEFE" position="47.131 6.907 -67.397" scale="2.090 2.950 0.110" rotation="0 225 0"></a-text>
+    <!--Declaration-->
+    <a-text value="Declaration:
+
+    We, Aayushi Sinha, Ayushi Dubey, Amishi Kumar, Anwita Sinha, 
+    and Tanvi Saroha, declare this project report as our original work 
+    during our 8-week internship at IGDTUW. Supervised by Mr. Dharm Raj Panwar, 
+    Dr. Rashmi, and Mr. Sachin, and guided by Mr. Gaurav Indra and Dr. Alongbar Wary. 
+    This work is unique, not submitted elsewhere, and follows university guidelines. 
+    No plagiarism is involved.      
+    "
+    text.align="center" wrap-count="30.000" color="#FFCEFE" position="47.231 6.907 -38.691" scale="1.950 2.550 0.110" rotation="0 225 0"></a-text>
+    <!--Abstract-->
+    <a-text value="Abstract/Summary:
+
+    ShopVista is an innovative virtual shopping mall project 
+    using A-Frame, Blender, and HTML to transform online shopping. 
+    It replicates physical mall interactivity via A-Frame's 
+    browser accessibility. Blender crafts lifelike 3D models for 
+    immersive visuals. HTML forms the structure, merging A-Frame and Blender. 
+    ShopVista enhances shopping with personalized suggestions, virtual try-ons, 
+    and interactive demos. Its adaptability suits diverse industries, 
+    redefining online shopping through convenience, interactivity, and immersion. 
+    This report encapsulates our hands-on learning and knowledge from the internship.      
+    "
+    text.align="center" wrap-count="30.000" color="#FFCEFE" position="-59.281 6.907 -32.506" scale="1.950 1.760 0.110" rotation="0 -225 0"></a-text>
+
+    <!--About Internship-->
+    <a-text value="About the Internship: 
+
+    The Metaverse - Virtual Reality with Unity internship explores 
+    VR applications using Unity. It offers hands-on experience in crafting 
+    immersive virtual environments and interactive encounters. We grasped 
+    the metaverse concept, a blend of AR, VR, and the internet. With Unity, 
+    a potent game development platform, we honed skills to create immersive 
+    metaverse VR experiences. This internship was an exciting journey into VR, 
+    nurturing our skills in Unity-driven metaverse immersion.      
+    "
+    text.align="center" wrap-count="30.000" color="#FFCEFE" position="-59.093 6.907 -59.577" scale="2.000 2.410 0.110" rotation="0 -225 0"></a-text>
+
+    <!--Software requirement-->
+    <a-text value="Software Requirements:
+
+    Visual Studio Code: User-friendly code editor for 
+    efficient task development, featuring fast code-build and debug cycles.
+    
+    HTML (Hypertext Mark-up Language): Common markup language 
+    for structuring web page content, defining element hierarchy.
+    
+    BLENDER: Open-source 3D modeling and animation software, 
+    suitable for diverse projects.
+    
+    A-FRAME: Mozilla's framework for web-based VR experiences, 
+    utilizing HTML and JavaScript with Web-GL for 3D visuals.      
+    "
+    text.align="center" wrap-count="30.000" color="#FFCEFE" position="-59.885 6.907 -85.688" scale="2.000 2.200 0.110" rotation="0 -225 0"></a-text>
+
+    <!--Conclusion-->
+    <a-text value="Conclusion:
+
+    Creating a VR-based virtual shopping mall can transform 
+    online shopping by replicating physical mall experiences. 
+    Immersive VR enhances engagement with interactive try-ons, 
+    demos, and tailored suggestions. Realistic store and product 
+    representation elevates aesthetics. This VR mall redefines online 
+    shopping, blending convenience, interactivity, and visual immersion.      
+    "
+    text.align="center" wrap-count="30.000" color="#FFCEFE" position="-20.606 6.907 -7.959" scale="2.000 2.640 0.110" rotation="0 -225 0"></a-text>
+
+    <!--Learning-->
+    <a-text value="Learnings:
+
+    Internship highlights:
+    
+    VR Introduction
+    Blender & A-Frame proficiency
+    Virtual Environment design
+    User interaction techniques (hand tracking, teleportation)
+    Meta-verse insights
+    Project development
+    Result: Strong Unity-based VR skills, meta-verse insights, and experience.
+    
+    Project Github link: https://github.com/dubeyayushi/ShopVista
+    
+    Website link: https://dubeyayushi.github.io/ShopVista/      
+    "
+    text.align="center" wrap-count="30.000" color="#FFCEFE" position="16.561 6.907 -14.051" scale="1.950 2.040 0.110" rotation="0 225 0"></a-text>
+
+    <!--camera positioning-->
+    <a-entity id="rig" position="-10.730 3.000 -175.665" rotation="0 180 0">
+        <a-camera id="camera"></a-camera>
+    </a-entity>
+
+
+</a-scene>
+</body>
+</html>
