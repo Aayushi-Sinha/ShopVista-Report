@@ -16,7 +16,7 @@ DOCTYPE html>
     <div class="splash">
         <div class="splash__card">
           <h1>WebVR Report - ShopVista</h1>
-          <p>You can move around with WASD keys (desktop) and drag using mousepad/ trackpad</p>
+          <p>You can move around with WASD keys (desktop) and drag using mousepad/ trackpad. Use the black cursor to click on the pedestal and visit the GitHub Repository and the Project.</p>
           <img class="splash__img" src="img/startimage.jpg" alt="whoa">
           <button class="splash__button">Enter</button>
         </div>
@@ -28,6 +28,27 @@ DOCTYPE html>
         
         splashButton.addEventListener('click', () => {
             splashScreen.style.display = 'none';
+        });
+    </script>
+
+    <script>
+        AFRAME.registerComponent('cursor-listener', {
+            init: function () {
+                const itemId = this.el.getAttribute('cursor-listener');
+
+                this.el.addEventListener('click', () => {
+                    let link;
+                    if (itemId === 'project_link') {
+                        link = 'https://dubeyayushi.github.io/ShopVista/';
+                    } else if (itemId === 'github_link') {
+                        link = 'https://github.com/dubeyayushi/ShopVista';
+                    }
+                    if (link) {
+                        window.open(link, '_blank');
+                    }
+
+                });
+            }
         });
     </script>
 
@@ -289,16 +310,32 @@ DOCTYPE html>
     Meta-verse insights
     Project development
     Result: Strong Unity-based VR skills, meta-verse insights, and experience.
-    
-    Project Github link: https://github.com/dubeyayushi/ShopVista
-    
-    Website link: https://dubeyayushi.github.io/ShopVista/      
+         
     "
     text.align="center" wrap-count="30.000" color="#FFCEFE" position="16.561 6.907 -14.051" scale="1.950 2.040 0.110" rotation="0 225 0"></a-text>
 
+    <a-gltf-model position="4.902 -0.891 1.211" rotation="0 180 0" scale="9.080 7.390 7.880" src="3d model/pedestal.glb" cursor-listener="project_link"></a-gltf-model>
+
+    <a-text 
+            value="Project Link "            
+            text.align="center" wrap-count="30.000" color="yellow" position="6.727 5.126 1.351" scale="2.270 3.040 0.110" rotation="0 180 0">
+        </a-text>
+    <a-gltf-model position="-16.230 -0.891 1.211" rotation="0 180 0" scale="9.080 7.390 7.880" src="3d model/pedestal.glb" cursor-listener="github_link"></a-gltf-model>
+    <a-text 
+            value="Github Link "            
+            text.align="center" wrap-count="30.000" color="yellow" position="-14.488 5.126 1.351" scale="2.270 3.040 0.110" rotation="0 180 0">
+        </a-text>
     <!--camera positioning-->
     <a-entity id="rig" position="-10.730 3.000 -175.665" rotation="0 180 0">
-        <a-camera id="camera"></a-camera>
+        <a-camera id="camera" look-controls position="0 1.6 0">
+            <a-entity 
+                  cursor
+                  position="0 0 -1"
+                  geometry="primitive: sphere; radius: 0.009"
+                  material="color: black; shader: flat"
+                  opacity="0.5">
+            </a-entity>
+        </a-camera>
     </a-entity>
 
 
