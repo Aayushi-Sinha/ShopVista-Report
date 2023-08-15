@@ -159,7 +159,7 @@ DOCTYPE html>
     <a-gltf-model position="52.083 -0.891 -119.968" rotation="0 270 180" scale="-0.050 -0.050 0.040" src="3d model/bench.glb"></a-gltf-model>
     
     <!--video-->
-    <video id="theaterVideo" autoplay="false" loop="false" webkit-playsinline playsinline src="img/movie.mp4"></video>
+    <video id="theaterVideo" autoplay="true" loop="true" webkit-playsinline playsinline src="img/ShopVista_DemoVideo4.mp4"></video>
 
     <a-entity position="-1.5 1.5 -22.5">
         <a-video src="#theaterVideo" width="7" height="5.25" position="-3.904 3.956 27.582" rotation="0 180 0" scale="2 2 2"></a-video>
@@ -325,8 +325,9 @@ DOCTYPE html>
             value="Github Link "            
             text.align="center" wrap-count="30.000" color="yellow" position="-14.488 5.126 1.351" scale="2.270 3.040 0.110" rotation="0 180 0">
         </a-text>
+
     <!--camera positioning-->
-    <a-entity id="rig" position="-10.730 3.000 -175.665" rotation="0 180 0">
+    <a-entity id="rig" position="-10.730 3.000 -175.665" rotation="0 180 0" listener>
         <a-camera id="camera" look-controls position="0 1.6 0">
             <a-entity 
                   cursor
@@ -337,6 +338,7 @@ DOCTYPE html>
             </a-entity>
         </a-camera>
     </a-entity>
+
 
 
 </a-scene>
